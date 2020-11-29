@@ -290,7 +290,7 @@ namespace IPA
 
         public static void ClearLine()
         {
-            if (IsConsole)
+            //if (IsConsole)
             {
                 Console.SetCursorPosition(0, Console.CursorTop);
                 int tpos = Console.CursorTop;
@@ -399,33 +399,33 @@ namespace IPA
 
         public static void ResetLine()
         {
-            if (IsConsole)
+            //if (IsConsole)
                 Console.CursorLeft = 0;
-            else
-                Console.Write("\r");
+            //else
+            //    Console.Write("\r");
         }
 
         public static void LineBack()
         {
-            if (IsConsole)
-                Console.CursorTop--;
-            else
+            //if (IsConsole)
+            //    Console.CursorTop--;
+            //else
                 Console.Write("\x1b[1A");
         }
 
-        [DllImport("kernel32.dll")]
-        private static extern IntPtr GetConsoleWindow();
+        //[DllImport("kernel32.dll")]
+        //private static extern IntPtr GetConsoleWindow();
 
-        private static bool? isConsole;
-        public static bool IsConsole
-        {
-            get
-            {
-                if (isConsole == null)
-                    isConsole = GetConsoleWindow() != IntPtr.Zero;
-                return isConsole.Value;
-            }
-        }
+        //private static bool? isConsole;
+        //public static bool IsConsole
+        //{
+        //    get
+        //    {
+        //        if (isConsole == null)
+        //            isConsole = GetConsoleWindow() != IntPtr.Zero;
+        //        return isConsole.Value;
+        //    }
+        //}
 
         //internal static class Keyboard
         //{
